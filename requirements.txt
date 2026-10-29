@@ -1,0 +1,23 @@
+# Agent service: LLM client (tool-calling limited to propose_payment)
+anthropic>=0.40
+
+# Policy Gateway: HTTP API
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.6
+
+# Policy Gateway: declarative YAML policy, signature verification
+pyyaml>=6.0
+cryptography>=42.0
+
+# Records: suppliers, invoices, purchase orders, payments, audit log
+sqlalchemy>=2.0
+
+# PayPal Sandbox API calls (idempotency key per request)
+httpx>=0.27
+
+# Config loading from .env
+python-dotenv>=1.0
+
+# Testing: unit tests, labelled attack dataset, zero-unsafe CI gate
+pytest>=8.0

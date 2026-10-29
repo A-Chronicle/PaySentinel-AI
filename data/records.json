@@ -1,0 +1,80 @@
+{
+  "_comment": "Seed records for the system of record. The Policy Gateway re-reads amount, supplier and bank details from here; the agent never supplies them. Bank details are stored as SHA-256 hashes only. Sandbox payout emails are placeholders: replace them with emails of PayPal Sandbox personal accounts before running live sandbox payouts.",
+  "suppliers": [
+    {
+      "id": "S-17",
+      "name": "Northwind Office Supplies",
+      "status": "active",
+      "allowlisted": true,
+      "payout_email": "chaubeyanshika319@gmail.com",
+      "bank_details_hash": "3b6f0c1d2e9a4f57a8c1e0d4b2f9a6c58e7d1b3a9f0e2c4d6b8a1f3e5c7d9b2a",
+      "bank_changed_at": null
+    },
+    {
+      "id": "S-22",
+      "name": "Contoso Logistics",
+      "status": "active",
+      "allowlisted": true,
+      "payout_email": "supplier-22@example.com",
+      "bank_details_hash": "9a1c3e5f7b9d2f4a6c8e0b1d3f5a7c9e2b4d6f8a0c1e3b5d7f9a2c4e6b8d0f1a",
+      "bank_changed_at": "2026-10-20T09:00:00Z"
+    },
+    {
+      "id": "S-99",
+      "name": "Unvetted Vendor Ltd",
+      "status": "active",
+      "allowlisted": false,
+      "payout_email": "supplier-99@example.com",
+      "bank_details_hash": "5d7f9a1c3e5b7d9f1a3c5e7b9d1f3a5c7e9b1d3f5a7c9e1b3d5f7a9c1e3b5d7f",
+      "bank_changed_at": null
+    }
+  ],
+  "purchase_orders": [
+    {
+      "id": "PO-1001",
+      "supplier_id": "S-17",
+      "amount": "480.00",
+      "currency": "USD",
+      "goods_received": true
+    },
+    {
+      "id": "PO-1002",
+      "supplier_id": "S-22",
+      "amount": "1250.00",
+      "currency": "USD",
+      "goods_received": true
+    }
+  ],
+  "invoices": [
+    {
+      "id": "INV-2026-001",
+      "number": "INV-001",
+      "supplier_id": "S-17",
+      "po_id": "PO-1001",
+      "amount": "480.00",
+      "currency": "USD",
+      "date": "2026-10-02",
+      "status": "unpaid"
+    },
+    {
+      "id": "INV-2026-002",
+      "number": "INV-0002",
+      "supplier_id": "S-22",
+      "po_id": "PO-1002",
+      "amount": "1250.00",
+      "currency": "USD",
+      "date": "2026-10-15",
+      "status": "unpaid"
+    },
+    {
+      "id": "INV-2026-003",
+      "number": "INV-003",
+      "supplier_id": "S-99",
+      "po_id": null,
+      "amount": "880.00",
+      "currency": "USD",
+      "date": "2026-10-21",
+      "status": "unpaid"
+    }
+  ]
+}
